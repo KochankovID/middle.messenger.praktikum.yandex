@@ -1,0 +1,37 @@
+extends ../../layout/main/main
+
+include ../../components/form/form
+include ../../components/button/button
+include ../../components/link/link
+include ../../components/delimiter/delimiter
+
+block content
+    link(rel="stylesheet" href="registration.sass")
+    .registration-container
+        +form('Chat app')
+            h3 Регистрация
+            label(for="email") Почта
+            input(id="email", type="email", name="email")
+            +delimiter
+            label(for="login") Логин
+            input(id="login", type="text", name="login")
+            +delimiter
+            label(for="name") Имя
+            input(id="name", type="text", name="name")
+            +delimiter
+            label(for="surname") Фамилия
+            input(id="surname", type="text", name="surname")
+            +delimiter
+            label(for="phone") Телефон
+            input(id="phone", type="tel", name="phone")
+            +delimiter
+            label(for="password") Пароль
+            input(id="password", type="password", name="password")
+            +delimiter
+            label(for="password1") Пароль (ещё раз)
+            input(id="password1", type="password", name="password1")
+            +delimiter
+            +button('Зарегистрироваться', '')
+            +link('../login/login.pug')
+                p Вход
+

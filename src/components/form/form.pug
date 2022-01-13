@@ -1,0 +1,10 @@
+mixin form(title)
+    link(rel="stylesheet", href="/src/components/form/form.sass")
+    .form
+        if title
+            div.form__title
+                h1= title
+        form
+            .form-content
+                if block
+                    block

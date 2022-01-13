@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "### Откройте pull request в ветку main из ветки, где вы разрабатывали проект, и добавьте ссылку на этот pr в README.md в ветке main.  ### ВАЖНО: pull request должен называться “Sprint i” (i — номер спринта).",
   "scripts": {
-    "dev": "parcel src/pages/home/home.pug --dist-dir build",
+    "dev": "parcel src/pages/home/home.pug src/pages/error/404/404.pug src/pages/error/500/500.pug --dist-dir build",
     "build": "parcel build src/pages/home/home.pug --dist-dir build"
   },
   "repository": {
@@ -19,5 +19,8 @@
   "devDependencies": {
     "@parcel/transformer-pug": "^2.0.1",
     "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "@parcel/transformer-sass": "^2.0.1"
   }
 }
