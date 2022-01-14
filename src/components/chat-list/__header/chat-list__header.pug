@@ -1,0 +1,15 @@
+include ../../link/link
+
+mixin chat-list__header
+    link(rel="stylesheet", href="/src/components/chat-list/__header/chat-list__header.sass")
+    .header-container
+        .header-title
+            h3 Chat app
+            div
+                +link('')
+                    p Профиль
+                    i.icon-chevron-right
+        .header-search-bar
+            i.icon-mdi_magnify
+            span Поиск
+

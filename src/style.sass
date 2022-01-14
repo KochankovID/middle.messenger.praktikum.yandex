@@ -10,7 +10,8 @@ $interesting-grey: #8A7470
 $khaski-web: #CCB69B
 $mandarine-orange: #DF9B6D
 $background: #FFE7CE
-$chatlist-background: #FFF0DA
+$chatlist-background: #F9E0C7
+$search-bar-background: #FFF0DA
 
 @font-face
   font-family: Montserrat
@@ -57,20 +58,44 @@ h4
   font-size: 24px
   color: $dark-violet
 
-@mixin label-font
+=label-font
   font-family: Assistant, sans-serif
   font-weight: normal
   font-size: 24px
   color: $dark-violet
 
-@mixin link-font
+=link-font
   font-family: Roboto, sans-serif
   font-weight: normal
   font-size: 24px
-  color: $dark-violet
+  color: $mandarine-orange
+
+=hint-font
+  font-family: Assistant, sans-serif
+  font-weight: normal
+  font-size: 18px
+  color: $interesting-grey
 
 .icon-chevron-right
   background: url('/static/icons/mdi_chevron-right.svg')
+  height: 24px
+  width: 24px
+  display: inline
+
+.icon-mdi_magnify
+  background: url('/static/icons/mdi_magnify.svg')
+  height: 24px
+  width: 24px
+  display: inline
+
+.icon-planet
+  background: url('/static/icons/planet.svg')
+  height: 24px
+  width: 24px
+  display: inline
+
+.icon-star
+  background: url('/static/icons/star.svg')
   height: 24px
   width: 24px
   display: inline
