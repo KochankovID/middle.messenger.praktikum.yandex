@@ -16,11 +16,11 @@ block content
             label(for="login") Логин
             input(id="login", type="text", name="login")
             +delimiter
-            label(for="name") Имя
-            input(id="name", type="text", name="name")
+            label(for="first_name") Имя
+            input(id="first_name", type="text", name="first_name")
             +delimiter
-            label(for="surname") Фамилия
-            input(id="surname", type="text", name="surname")
+            label(for="second_name") Фамилия
+            input(id="second_name", type="text", name="second_name")
             +delimiter
             label(for="phone") Телефон
             input(id="phone", type="tel", name="phone")
@@ -31,7 +31,7 @@ block content
             label(for="password1") Пароль (ещё раз)
             input(id="password1", type="password", name="password1")
             +delimiter
-            +button('Зарегистрироваться', '../chat-list/chat-list.pug')
+            +button('Зарегистрироваться', '../chat-not-selected/chat-not-selected.pug')
             +link('../login/login.pug')
                 p Вход
 

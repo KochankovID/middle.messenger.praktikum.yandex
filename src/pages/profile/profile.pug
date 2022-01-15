@@ -1,0 +1,27 @@
+extends ../../layout/main/main
+
+include ../../components/profile-info/profile-info
+include ../../components/link/link
+include ../../components/profile-info/__item/profile-info__item
+
+block content
+    link(rel="stylesheet" href="profile.sass")
+    .profile-container
+        +profile-info('Андрей', 'https://short.link/z43sxm')
+            +profile-info__item('Почта','fakafafakafa@mail.ru')
+            +profile-info__item('Логин','fakafafakafa')
+            +profile-info__item('Имя','Андрей')
+            +profile-info__item('Фамилия', 'Шувалов')
+            +profile-info__item('Имя в чате', 'Андрей')
+            +profile-info__item('Телефон', '+7 900 555 55 55')
+            .profile-info-buttons
+                +link('../profile-edit/profile-edit.pug')
+                    p Изменить данные
+                .footer-buttons
+                    +link('')
+                        p Изменить пароль
+                    +link('../home/home.pug')
+                        p.link_important Выйти
+
+
+

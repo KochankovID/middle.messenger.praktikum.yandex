@@ -1,0 +1,11 @@
+include ../../delimiter/delimiter
+
+mixin profile-info__item(label, value)
+    link(rel="stylesheet", href="/src/components/profile-info/__item/profile-info__item.sass")
+    .profile-info__item
+        .profile-info-title
+            span.profile-info-label= label
+            span.profile-info-value= value
+        +delimiter
+
+

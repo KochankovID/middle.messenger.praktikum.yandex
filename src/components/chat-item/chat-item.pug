@@ -4,7 +4,7 @@ include __notification/chat-item__notification
 
 mixin chat-list__item(url, name, sender, message, time, notification)
     link(rel="stylesheet", href="/src/components/chat-item/chat-item.sass")
-    .item-container
+    .chat-list__item
         .item-person-info
             +circle-avatar(url)
             .item-title
