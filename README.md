@@ -26,4 +26,5 @@ npm install
 > https://www.figma.com/file/haSfUUkaDCwH6pj3l6GaF0/Chat-design?node-id=0%3A1
 
 ### Ссылка на pull request
+
 > https://github.com/KochankovID/middle.messenger.praktikum.yandex/pull/1
