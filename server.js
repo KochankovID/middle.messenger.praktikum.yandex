@@ -1,4 +1,4 @@
-import express from "express";
+let express = require('express')
 
 const app = express();
 const PORT = 3000;
