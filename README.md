@@ -13,9 +13,9 @@ npm install
 ```
 
 - Запуск проекта
-    - ```npm run dev``` - запускает сборку и дев-сервер parcel
-    - ```npm run build``` - собирает production пакет статики
-    - ```npm run start``` - собирает production пакет статики и запускает express сервер на 3000 порту
+  - `npm run dev` - запускает сборку и дев-сервер parcel
+  - `npm run build` - собирает production пакет статики
+  - `npm run start` - собирает production пакет статики и запускает express сервер на 3000 порту
 
 ## Netlify
 
