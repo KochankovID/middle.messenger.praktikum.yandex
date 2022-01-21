@@ -1,0 +1,17 @@
+extends ../../layout/main/main
+
+include ../../components/profile-info/profile-info
+include ../../components/button/button
+include ../../components/profile-info/__item/_edit/profile-info__item_edit
+
+block content
+    link(rel="stylesheet" href="profile-edit.sass")
+    .profile-container
+        +profile-info('', 'https://short.link/z43sxm')
+            +profile-info__item_edit('Почта', 'email', 'fakafafakafa@mail.ru')
+            +profile-info__item_edit('Логин', 'login', 'fakafafakafa')
+            +profile-info__item_edit('Имя', 'first_name', 'Андрей')
+            +profile-info__item_edit('Фамилия', 'second_name', 'Шувалов')
+            +profile-info__item_edit('Имя в чате', 'display_name', 'Андрей')
+            +profile-info__item_edit('Телефон', 'phone', '+7 900 555 55 55')
+            +button('Сохранить', '../profile/profile.pug')

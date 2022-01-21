@@ -1,0 +1,49 @@
+@import "src/style"
+
+.chat-list__item
+  padding: 4% 0 4% 4%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  cursor: pointer
+
+  .item-person-info
+    display: flex
+    width: 75%
+
+    .circle-avatar
+      margin-right: 26px
+      width: 86px
+      height: 86px
+
+    .item-title
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: start
+      width: 60%
+
+      padding: 4% 0 4% 0
+
+      h4
+        margin: 0
+        width: 100%
+        display: block
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+
+      span
+        +hint-font
+        display: block
+        width: 100%
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+
+  .item-message-info
+    display: flex
+    justify-content: space-between
+
+    .chat-item__time
+      margin-left: 10px

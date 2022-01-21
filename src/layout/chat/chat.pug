@@ -1,0 +1,9 @@
+extends ../main/main
+include ../../components/chat-list/chat-list
+
+block content
+    link(rel="stylesheet" href="/src/layout/chat/chat.sass")
+    .chat-list-container
+        +chat-list
+        .chat-content
+            block chat-content

@@ -1,0 +1,30 @@
+@import "src/style"
+
+.header-container
+  display: flex
+  flex-direction: column
+
+  .header-title
+    display: flex
+    justify-content: space-between
+    align-items: baseline
+
+    h3
+      white-space: nowrap
+      margin: 0
+
+  .header-search-bar
+    margin: 4% 0
+    height: 48px
+    background: $search-bar-background
+    border-radius: 16px
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+    i
+      margin-right: 1%
+
+    > *
+      +link-font

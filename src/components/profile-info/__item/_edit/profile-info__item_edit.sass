@@ -1,0 +1,28 @@
+@import "src/style"
+
+.profile-info__item_edit
+  display: flex
+  flex-direction: column
+
+  .profile-info-title
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: baseline
+
+  span.profile-info-label
+    +label-font
+
+  span.profile-info-value
+    +hint-font
+
+  input
+    +link-font
+    border: none
+    box-shadow: none
+    outline: none
+    background: transparent
+
+
+  ::-webkit-input-placeholder
+    text-align: end

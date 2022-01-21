@@ -1,0 +1,9 @@
+include ../../circle-avatar/circle-avatar
+
+mixin chat-view__header(url, name)
+    link(rel="stylesheet", href="/src/components/chat-view/__header/chat-view__header.sass")
+    .chat-view__header
+        .header-user-info
+            +circle-avatar(url)
+            h4= name
+        i.icon-more

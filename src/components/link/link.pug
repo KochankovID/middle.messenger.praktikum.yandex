@@ -1,0 +1,6 @@
+mixin link(url)
+    link(rel="stylesheet", href="/src/components/link/link.sass")
+    span.link-container
+        a.link(href=url)
+        if block
+            block

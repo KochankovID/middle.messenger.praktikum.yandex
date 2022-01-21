@@ -1,0 +1,21 @@
+extends ../../layout/main/main
+
+include ../../components/form/form
+include ../../components/button/button
+include ../../components/link/link
+include ../../components/delimiter/delimiter
+
+block content
+    link(rel="stylesheet" href="login.sass")
+    .login-container
+        +form('Chat app')
+            h3 Вход
+            label(for="login") Логин
+            input(id="login", type="text", name="login")
+            +delimiter
+            label(for="password") Пароль
+            input(id="password", type="password", name="password")
+            +delimiter
+            +button('Авторизоваться', '../chat-not-selected/chat-not-selected.pug')
+            +link('../registration/registration.pug')
+                p Нет аккаунта?

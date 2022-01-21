@@ -1,0 +1,12 @@
+extends ../layout/main/main
+
+include ../components/preview/preview
+include ../components/button/button
+
+block content
+    link(rel="stylesheet" href="index.sass")
+    .home-container
+        .home-column
+            h1 Chat app
+            +button('Start messaging', './login/login.pug')
+        +preview

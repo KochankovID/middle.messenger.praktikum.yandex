@@ -1,0 +1,8 @@
+include __header/profile-info__header.pug
+
+mixin profile-info(name, url)
+    link(rel="stylesheet", href="/src/components/profile-info/profile-info.sass")
+    .profile-info-container
+        +profile-info__header(name, url)
+        if block
+            block
