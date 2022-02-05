@@ -1,5 +1,6 @@
 import { EventBus } from "./event-bus";
-import pug from "pug";
+// eslint-disable-next-line unicorn/prefer-module
+let pug = require("pug");
 
 export default abstract class Block {
   static EVENTS = {
