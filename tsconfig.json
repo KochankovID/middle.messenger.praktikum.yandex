@@ -8,7 +8,7 @@
     "checkJs": true,
     "strict": true,
     "moduleResolution": "Node",
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "outDir": "build",
