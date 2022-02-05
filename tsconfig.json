@@ -12,7 +12,10 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "outDir": "build",
-    "removeComments": true
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true
   },
   "exclude": ["node_modules"]
 }
