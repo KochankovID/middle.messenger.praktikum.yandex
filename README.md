@@ -27,4 +27,4 @@ npm install
 
 ### Ссылка на pull request
 
-> https://github.com/KochankovID/middle.messenger.praktikum.yandex/pull/1
+> https://github.com/KochankovID/middle.messenger.praktikum.yandex/pull/5
