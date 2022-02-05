@@ -16,6 +16,7 @@ block content
             label(for="password") Пароль
             input(id="password", type="password", name="password")
             +delimiter
-            +button('Авторизоваться', '../chat-not-selected/chat-not-selected.pug')
-            +link('../registration/registration.pug')
+            +button('Авторизоваться', '../chat-not-selected/chat-not-selected.html')
+            +link('/registration/registration.html')
                 p Нет аккаунта?
+    script(type="module", src="./login.ts")

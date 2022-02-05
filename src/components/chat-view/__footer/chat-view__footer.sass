@@ -1,36 +1,37 @@
-@import "src/style"
+@import 'src/style'
+
+$icon-send-background-shadow: rgba(0, 0, 0, .25)
 
 .chat-view__footer
+  align-items: center
   display: flex
   flex-direction: row
   justify-content: space-between
-  align-items: center
-  width: 100%
   padding-top: 16px
+  width: 100%
 
   input
-    width: 80%
     +link-font
-    border: none
-    box-shadow: none
-    outline: none
     background: $search-bar-background
     border-radius: 32px
-    height: 48px
-    padding: 0 16px
+    border-width: 0
+    box-shadow: none
     color: $dark-violet
+    height: 48px
+    outline: none
+    padding: 0 16px
+    width: 80%
 
   .icon-send-background
-    height: 70px
-    width: 70px
+    -webkit-filter: $icon-send-background-shadow
+    align-items: center
     background: $khaski-web
     border-radius: 50%
-    -webkit-filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25))
-
     display: flex
+    height: 70px
     justify-content: center
-    align-items: center
+    width: 70px
 
-    i.icon-send
-      object-fit: fill
+    .icon-send
       margin-left: 10px
+      object-fit: fill

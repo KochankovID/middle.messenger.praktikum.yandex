@@ -1,17 +1,17 @@
-@import "src/style"
+@import 'src/style'
 
 .profile-info__item
   display: flex
   flex-direction: column
 
   .profile-info-title
+    align-items: baseline
     display: flex
     flex-direction: row
     justify-content: space-between
-    align-items: baseline
 
-  span.profile-info-label
-    +label-font
+    .profile-info-label
+      +label-font
 
-  span.profile-info-value
-    +hint-font
+    .profile-info-value
+      +hint-font

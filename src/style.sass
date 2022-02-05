@@ -1,125 +1,126 @@
 // Theme settings
 
 // Color-pallet
-$gold-crayola: #EFC69B
-$fuzzy-wuzzy: #CF716D
-$vivid-red: #AF1B3F
-$claret: #7B2642
+$gold-crayola: #efc69b
+$fuzzy-wuzzy: #cf716d
+$vivid-red: #af1b3f
+$claret: #7b2642
 $dark-violet: #473144
-$interesting-grey: #8A7470
-$khaski-web: #CCB69B
-$mandarine-orange: #DF9B6D
-$background: #FFE7CE
-$chatlist-background: #F9E0C7
-$search-bar-background: #FFF0DA
+$interesting-grey: #8a7470
+$khaski-web: #ccb69b
+$mandarine-orange: #df9b6d
+$background: #ffe7ce
+$chatlist-background: #f9e0c7
+$search-bar-background: #fff0da
 
-@font-face
-  font-family: Montserrat
-  src: url("/static/fonts/Montserrat/Montserrat-BoldItalic.ttf") format("truetype")
+$h1-shadow: rgb(0 0 0 / 25%)
 
-@font-face
-  font-family: Rokkitt
-  src: url("/static/fonts/Rokkitt/Rokkitt-VariableFont_wght.ttf") format("truetype")
+h1
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-image: linear-gradient(180deg, $dark-violet 0%, $mandarine-orange 100%)
+  filter: drop-shadow(0 4px 2px $h1-shadow)
+  font-family: Montserrat, sans-serif
+  font-size: 72px
+  font-weight: bold
+  text-align: center
+
+h2
+  color: $dark-violet
+  font-family: Montserrat, sans-serif
+  font-size: 64px
+  font-weight: normal
+
+h3
+  color: $dark-violet
+  font-family: Rokkitt, sans-serif
+  font-size: 48px
+  font-weight: normal
+
+h4
+  color: $dark-violet
+  font-family: Rokkitt, sans-serif
+  font-size: 24px
+  font-weight: normal
 
 @font-face
   font-family: Assistant
-  src: url("/static/fonts/Assistant/Assistant-VariableFont_wght.ttf") format("truetype")
+  src: url('/static/fonts/Assistant/Assistant-VariableFont_wght.ttf') format('truetype')
 
 @font-face
   font-family: Roboto
-  src: url("/static/fonts/Roboto/Roboto-Medium.ttf") format("truetype")
+  src: url('/static/fonts/Roboto/Roboto-Medium.ttf') format('truetype')
 
-h1
-  font-family: Montserrat, sans-serif
-  font-weight: bold
-  font-size: 72px
-  text-align: center
+@font-face
+  font-family: Montserrat
+  src: url('/static/fonts/Montserrat/Montserrat-BoldItalic.ttf') format('truetype')
 
-  background-image: linear-gradient(180deg, $dark-violet 0%, $mandarine-orange 100%)
-  -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
-  -webkit-filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25))
-
-h2
-  font-family: Montserrat, sans-serif
-  font-weight: normal
-  font-size: 64px
-  color: $dark-violet
-
-h3
-  font-family: Rokkitt, sans-serif
-  font-weight: normal
-  font-size: 48px
-  color: $dark-violet
-
-h4
-  font-family: Rokkitt, sans-serif
-  font-weight: normal
-  font-size: 24px
-  color: $dark-violet
+@font-face
+  font-family: Rokkitt
+  src: url('/static/fonts/Rokkitt/Rokkitt-VariableFont_wght.ttf') format('truetype')
 
 =label-font
-  font-family: Assistant, sans-serif
-  font-weight: normal
-  font-size: 24px
   color: $dark-violet
+  font-family: Assistant, sans-serif
+  font-size: 24px
+  font-weight: normal
 
 =link-font
-  font-family: Roboto, sans-serif
-  font-weight: normal
-  font-size: 24px
   color: $mandarine-orange
+  font-family: Roboto, sans-serif
+  font-size: 24px
+  font-weight: normal
 
 =hint-font
-  font-family: Assistant, sans-serif
-  font-weight: normal
-  font-size: 18px
   color: $interesting-grey
+  font-family: Assistant, sans-serif
+  font-size: 18px
+  font-weight: normal
 
 .icon-chevron-right
   background: url('/static/icons/mdi_chevron-right.svg') no-repeat center
+  display: inline
   height: 24px
   width: 24px
-  display: inline
 
-.icon-mdi_magnify
+.icon-mdi-magnify
   background: url('/static/icons/mdi_magnify.svg') no-repeat center
+  display: inline
   height: 24px
   width: 24px
-  display: inline
 
 .icon-planet
   background: url('/static/icons/planet.svg') no-repeat center
+  display: inline
   height: 24px
   width: 24px
-  display: inline
 
 .icon-star
   background: url('/static/icons/star.svg') no-repeat center
+  display: inline
   height: 24px
   width: 24px
-  display: inline
 
 .icon-more
   background: url('/static/icons/more.svg') no-repeat center
+  display: inline
   height: 48px
   width: 48px
-  display: inline
 
-.icon-attach_file
+.icon-attach-file
   background: url('/static/icons/attach_file.svg') no-repeat center
+  display: inline
   height: 48px
   width: 48px
-  display: inline
 
 .icon-send
   background: url('/static/icons/send.svg') no-repeat center
+  display: inline
   height: 48px
   width: 48px
-  display: inline
 
-.icon-arrow_back_ios
+.icon-arrow-back-ios
   background: url('/static/icons/arrow_back_ios.svg') no-repeat center
+  display: inline
   height: 48px
   width: 48px
-  display: inline

@@ -1,0 +1,18 @@
+root: true
+env:
+  node: true
+  es6: true
+parser: "@typescript-eslint/parser"
+parserOptions:
+  project: ./tsconfig.json
+extends:
+  - plugin:unicorn/recommended
+  - prettier
+plugins:
+  - prettier
+  - unicorn
+rules:
+  prettier/prettier: "error"
+  no-console: warn
+  unicorn/filename-case: 0
+  unicorn/no-array-for-each: 0

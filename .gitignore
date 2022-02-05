@@ -129,3 +129,4 @@ build
 
 # WebStorm
 .idea
+!/src/pages/profile-edit/profile-edit.sass

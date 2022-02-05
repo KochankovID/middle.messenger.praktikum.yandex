@@ -1,0 +1,6 @@
+mixin chat-view__message_text(text)
+    script(type="module").
+      import ChatViewMessageText from "/src/components/chat-view/__message/--text/chat-view__message--text.ts";
+      document.currentScript.parentNode.innerHTML += (new ChatViewMessageText({
+      text: "#{text}",
+      })).element

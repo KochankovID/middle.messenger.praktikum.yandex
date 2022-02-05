@@ -4,6 +4,14 @@ include ../../components/chat-list/chat-list
 block content
     link(rel="stylesheet" href="/src/layout/chat/chat.sass")
     .chat-list-container
-        +chat-list
+        +chat-list([
+          {url: "https://short.link/z43sxm", name: "Андрей", sender: "", message: "Изображение", time: "14:45", notification: ""},
+          {url: "https://short.link/jz4367", name: "Валентин", sender: "", message: "Друзья, у меня для вас отличные новости", time: "10:15", notification: "1"},
+          {url: "https://short.link/n3qdnu", name: "Евгений", sender: "Вы:", message: "стикер", time: "10:15", notification: "1"},
+          {url: "https://short.link/jkn3tj", name: "Анна Исаковна Анатольевна", sender: "", message: "Изображение", time: "03:14", notification: "6"},
+          {url: "https://short.link/jkn3tj", name: "Алексей", sender: "", message: "Я писал тебе на счёт того отчёта", time: "ср", notification: ""},
+          {url: "https://short.link/jkn3tj", name: "Константин", sender: "", message: "стикер", time: "01.09.22", notification: "1"},
+          {url: "https://short.link/3qdj8w", name: "Виталий", sender: "", message: "Миллионы людей едят курицу", time: "01.09.22", notification: "11"},
+        ])
         .chat-content
             block chat-content

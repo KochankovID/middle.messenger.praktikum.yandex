@@ -1,15 +1,17 @@
-@import "src/style"
-@import "__title/form__title"
+@import 'src/style'
+@import '__title/form__title'
+
+.form-block
+  display: none
 
 .form
-  border-style: solid
-  border-width: 4px
+  align-items: stretch
   border-color: $gold-crayola
   border-radius: 16px
-
+  border-style: solid
+  border-width: 4px
   display: flex
   flex-direction: column
-  align-items: stretch
 
   h3
     margin: 0
@@ -20,17 +22,15 @@
     color: $mandarine-orange
 
   input
-    +link-font
-    border: none
+    +label-font
+    background: transparent
+    border-width: 0
     box-shadow: none
     outline: none
-    background: transparent
-
     width: 100%
 
-.form-content
-  padding: 0 36px
-
-  display: flex
-  flex-direction: column
-  justify-content: center
+  .form-content
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 0 36px

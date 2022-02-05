@@ -1,8 +1,4 @@
-
 mixin chat-view__footer(url, name)
-    link(rel="stylesheet", href="/src/components/chat-view/__footer/chat-view__footer.sass")
-    .chat-view__footer
-        i.icon-attach_file
-        input(type=text, name='message', placeholder="Сообщение")
-        .icon-send-background
-            i.icon-send
+    script(type="module").
+      import ChatViewFooter from "/src/components/chat-view/__footer/chat-view__footer.ts";
+      document.currentScript.parentNode.innerHTML += (new ChatViewFooter()).element

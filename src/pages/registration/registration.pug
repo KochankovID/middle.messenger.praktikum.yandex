@@ -31,6 +31,7 @@ block content
             label(for="password1") Пароль (ещё раз)
             input(id="password1", type="password", name="password1")
             +delimiter
-            +button('Зарегистрироваться', '../chat-not-selected/chat-not-selected.pug')
-            +link('../login/login.pug')
+            +button('Зарегистрироваться', '../chat-not-selected/chat-not-selected.html')
+            +link('../login/login.html')
                 p Вход
+    script(type="module", src="./registration.ts")

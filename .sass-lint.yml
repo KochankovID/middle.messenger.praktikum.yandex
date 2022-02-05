@@ -1,0 +1,14 @@
+files:
+  include: '**/*.s+(a|c)ss'
+  ignore:
+    - build/*
+rules:
+  class-name-format:
+    - 2
+    - convention: hyphenatedbem
+  no-vendor-prefixes:
+    - 0
+  no-misspelled-properties:
+    - 2
+    - 'extra-properties':
+        - aspect-ratio

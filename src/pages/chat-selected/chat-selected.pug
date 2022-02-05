@@ -3,4 +3,12 @@ extends ../../layout/chat/chat.pug
 include ../../components/chat-view/chat-view
 
 block chat-content
-    +chat-view('https://short.link/z43sxm', 'Андрей')
+    +chat-view('https://short.link/z43sxm', 'Андрей', [
+      {content: 'Привет!', time: '11:12', sender: 0},
+      {content: 'Доброго времени суток!', time: '11:12', sender: 1},
+      {content: 'Мне приснился сон, где я был в космосе, мы с друзьями играли в игры. И вдруг, я увидел, как моя звезда падает. Я побежал к ней быстрее, чем она падала. Когда я подбежал ближе, она взорвалась. Через несколько секунд я проснулся.',
+        time: '11:24', sender: 0},
+      {content: 'https://short.link/ap5mhf', time: '11:24', sender: 0},
+      {content: 'Все знают, что Земля - третья планета от Солнца.', time: '12:00', sender: 0},
+      {content: 'Это очень интересно!', time: '13:00', sender: 1},
+    ])

@@ -1,27 +1,26 @@
-@import "src/style"
+@import 'src/style'
 
 .header-container
   display: flex
   flex-direction: column
 
   .header-title
+    align-items: baseline
     display: flex
     justify-content: space-between
-    align-items: baseline
 
     h3
-      white-space: nowrap
       margin: 0
+      white-space: nowrap
 
   .header-search-bar
-    margin: 4% 0
-    height: 48px
+    align-items: center
     background: $search-bar-background
     border-radius: 16px
-
     display: flex
+    height: 48px
     justify-content: center
-    align-items: center
+    margin: 4% 0
 
     i
       margin-right: 1%

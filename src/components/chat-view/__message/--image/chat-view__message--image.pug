@@ -1,0 +1,6 @@
+mixin chat-view__message_image(url)
+    script(type="module").
+      import ChatViewMessageImage from "/src/components/chat-view/__message/--image/chat-view__message--image";
+      document.currentScript.parentNode.innerHTML += (new ChatViewMessageImage({
+      url: "#{url}",
+      })).element

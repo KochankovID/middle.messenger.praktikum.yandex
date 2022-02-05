@@ -1,6 +1,4 @@
 mixin chat-preview
-    link(rel="stylesheet", href="/src/components/chat-preview/chat-preview.sass")
-    .chat-preview
-        i.icon-planet
-        p Выберете чат
-        i.icon-star
+    script(type="module").
+      import ChatPreview from "/src/components/chat-preview/chat-preview.ts";
+      document.currentScript.parentNode.innerHTML += (new ChatPreview()).element
