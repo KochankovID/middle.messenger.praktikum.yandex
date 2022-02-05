@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "parcel src/pages/index.pug src/pages/*/*.pug src/pages/error/*/*.pug --dist-dir ./build",
     "build": "parcel build src/pages/index.pug src/pages/*/*.pug src/pages/error/*/*.pug --dist-dir ./build",
-    "start": "npm run build && node server.ts"
+    "start": "npm run build && ts-node server.ts"
   },
   "repository": {
     "type": "git",

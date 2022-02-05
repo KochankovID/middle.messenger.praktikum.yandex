@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es5",
+    "target": "ES5",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "checkJs": true,
     "strict": true,
     "moduleResolution": "Node",
+    "esModuleInterop": true,
     "noImplicitAny": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
