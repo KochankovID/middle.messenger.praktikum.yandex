@@ -1,10 +1,13 @@
 mixin form(title)
-    link(rel="stylesheet", href="/src/components/form/form.sass")
-    .form
-        if title
-            div.form__title
-                h1= title
-        form
-            .form-content
-                if block
-                    block
+  - const id = Math.random() * 100000;
+  div.form-mixin
+    if block
+      .form-block
+        block
+    script(id=id, type="module").
+      import Form from "/src/components/form/form.ts";
+      let formElement = (new Form({
+      title: "#{title}",
+      }))
+      formElement.setInnerBlock(document.getElementById("#{id}").parentNode.firstChild.innerHTML)
+      document.getElementById("#{id}").parentNode.innerHTML += formElement.element

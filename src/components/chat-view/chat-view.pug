@@ -1,21 +1,15 @@
-include __message/chat-view__message
-include __header/chat-view__header
-include __footer/chat-view__footer
-include ../delimiter/delimiter
+mixin chat-view(url, name, messages)
+  - const id = Math.random() * 100000;
+  div
+    script(id=id, type="module").
+      import ChatView from "/src/components/chat-view/chat-view.ts";
+      document.getElementById("#{id}").parentNode.innerHTML += (new ChatView({
+      url: "#{url}",
+      name: "#{name}",
+      messages: JSON.parse('!{JSON.stringify(messages)}')
+      })).element
 
-mixin chat-view(url, name)
-    link(rel="stylesheet", href="/src/components/chat-view/chat-view.sass")
-    .chat-view
-        +chat-view__header(url, name)
-        +delimiter
-        .scroll-container
-            .messages-column
-                +chat-view__message('Привет!', '11:12', 0)
-                +chat-view__message('Доброго времени суток!', '11:12', 1)
-                +chat-view__message('Мне приснился сон, где я был в космосе, мы с друзьями играли в игры. И вдруг, я увидел, как моя звезда падает. Я побежал к ней быстрее, чем она падала. Когда я подбежал ближе, она взорвалась. Через несколько секунд я проснулся.', '11:24', 0)
-                +chat-view__message('https://short.link/ap5mhf', '11:24', 0)
-                +chat-view__message('Все знают, что Земля - третья планета от Солнца.', '12:00', 0)
-                +chat-view__message('Это очень интересно!', '13:00', 1)
-
-        +delimiter
-        +chat-view__footer
+      import { setValidator, validateMessage } from "/src/utils/validators.ts";
+      let messageInput: HTMLInputElement = document.querySelector("#message");
+      messageInput = document.querySelector("#message");
+      setValidator(messageInput, validateMessage);

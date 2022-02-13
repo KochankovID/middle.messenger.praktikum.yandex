@@ -1,3 +1,7 @@
 mixin circle-avatar(url)
-    link(rel="stylesheet", href="/src/components/circle-avatar/circle-avatar.sass")
-    img(src=url).circle-avatar
+  - const id = Math.random() * 100000;
+  script(id=id, type="module").
+      import CircleAvatar from "/src/components/circle-avatar/circle-avatar.ts";
+      document.getElementById("#{id}").parentNode.innerHTML += (new CircleAvatar({
+      url: "#{url}",
+      })).element

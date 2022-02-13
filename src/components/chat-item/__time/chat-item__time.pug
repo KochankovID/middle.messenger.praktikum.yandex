@@ -1,4 +1,7 @@
-mixin chat-item__time(time)
-    link(rel="stylesheet", href="/src/components/chat-item/__time/chat-item__time.sass")
-    .chat-item__time
-        span= time
+mixin chat-item__time(url)
+  - const id = Math.random() * 100000;
+  script(id=id, type="module").
+      import ChatItemTime from "/src/components/chat-item/__time/chat-item__time.ts";
+      document.getElementById("#{id}").parentNode.innerHTML += (new ChatItemTime({
+      time: "#{time}",
+      })).element

@@ -2,6 +2,7 @@ extends ../../layout/main/main
 
 include ../../components/form/form
 include ../../components/button/button
+include ../../components/input/input
 include ../../components/link/link
 include ../../components/delimiter/delimiter
 
@@ -11,26 +12,27 @@ block content
         +form('Chat app')
             h3 Регистрация
             label(for="email") Почта
-            input(id="email", type="email", name="email")
+            +input("email", "email", "email")
             +delimiter
             label(for="login") Логин
-            input(id="login", type="text", name="login")
+            +input("login", "text", "login")
             +delimiter
             label(for="first_name") Имя
-            input(id="first_name", type="text", name="first_name")
+            +input("first_name", "text", "first_name")
             +delimiter
             label(for="second_name") Фамилия
-            input(id="second_name", type="text", name="second_name")
+            +input("second_name", "text", "second_name")
             +delimiter
             label(for="phone") Телефон
-            input(id="phone", type="tel", name="phone")
+            +input("phone", "tel", "phone")
             +delimiter
             label(for="password") Пароль
-            input(id="password", type="password", name="password")
+            +input("password", "password", "password")
             +delimiter
             label(for="password1") Пароль (ещё раз)
-            input(id="password1", type="password", name="password1")
+            +input("password1", "password", "password1")
             +delimiter
-            +button('Зарегистрироваться', '../chat-not-selected/chat-not-selected.pug')
-            +link('../login/login.pug')
+            +button('Зарегистрироваться', '../chat-not-selected/chat-not-selected.html')
+            +link('../login/login.html')
                 p Вход
+    script(type="module", src="./registration.ts")

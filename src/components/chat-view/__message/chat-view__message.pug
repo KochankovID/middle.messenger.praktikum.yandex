@@ -1,25 +1,9 @@
-include _text/chat-view__message_text
-include _image/chat-view__message_image
-
 mixin chat-view__message(content, time, sender)
-    - function validateUrl(value) { return /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(value); }
-
-    link(rel="stylesheet", href="/src/components/chat-view/__message/chat-view__message.sass")
-    link(rel="stylesheet", href="/src/components/chat-view/__message/_left/chat-view__message_left.sass")
-    link(rel="stylesheet", href="/src/components/chat-view/__message/_right/chat-view__message_right.sass")
-    if sender === 0
-        .chat-view__message.chat-view__message_left
-            if validateUrl(content)
-                +chat-view__message_image(content)
-            else
-                +chat-view__message_text(content)
-            .message-time
-                span.message-time-text= time
-    else
-        .chat-view__message.chat-view__message_right
-            if validateUrl(content)
-                +chat-view__message_image(content)
-            else
-                +chat-view__message_text(content)
-            .message-time
-                span.message-time-text= time
+  - const id = Math.random() * 100000;
+  script(id=id, type="module").
+      import ChatViewMessage from "/src/components/chat-view/__message/chat-view__message.ts";
+      document.getElementById("#{id}").parentNode.innerHTML += (new ChatViewMessage({
+      content: "#{content}",
+      time: "#{time}",
+      sender: "#{sender}",
+      })).element

@@ -1,22 +1,22 @@
-@import "src/style"
-@import "_important/link_important"
+@import 'src/style'
+@import '--important/link_important'
+
+.link-block
+  display: none
 
 .link-container
+  align-items: center
   cursor: pointer
-
-  position: relative
-
   display: flex
   justify-content: center
-  align-items: center
+  position: relative
 
   .link
-    position: absolute
-    width: 100%
     height: 100%
-
-    top: 0
     left: 0
+    position: absolute
+    top: 0
+    width: 100%
 
   > *
     +link-font

@@ -1,22 +1,8 @@
-include __header/chat-list__header
-include ../delimiter/delimiter
-include ../chat-item/chat-item
-
-mixin chat-list
-    link(rel="stylesheet", href="/src/components/chat-list/chat-list.sass")
-    .chat-list
-        +chat-list__header
-        +delimiter
-        +chat-list__item('https://short.link/z43sxm', 'Андрей', '', 'Изображение', '14:45')
-        +delimiter
-        +chat-list__item('https://short.link/jz4367', 'Валентин', '', 'Друзья, у меня для вас отличные новости', '10:15', '1')
-        +delimiter
-        +chat-list__item('https://short.link/n3qdnu', 'Евгений', 'Вы:', 'стикер', '10:15')
-        +delimiter
-        +chat-list__item('https://short.link/jkn3tj', 'Анна Исаковна Анатольевна', '', 'Изображение', '03:14', '6')
-        +delimiter
-        +chat-list__item('https://short.link/exfe45', 'Алексей', '', 'Я писал тебе на счёт того отчёта', 'ср')
-        +delimiter
-        +chat-list__item('https://short.link/eu2e5g', 'Константин', '', 'стикер', '01.09.22', '1')
-        +delimiter
-        +chat-list__item('https://short.link/3qdj8w', 'Виталий', '', 'Миллионы людей едят курицу', '01.09.22', '11')
+mixin chat-list(items)
+  - const id = Math.random() * 100000;
+  div
+      script(id=id, type="module").
+          import ChatList from "/src/components/chat-list/chat-list.ts";
+          document.getElementById("#{id}").parentNode.innerHTML += (new ChatList({
+          items: JSON.parse('!{JSON.stringify(items)}')
+          })).element

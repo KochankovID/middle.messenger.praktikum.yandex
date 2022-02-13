@@ -1,3 +1,6 @@
 mixin delimiter
-    link(rel="stylesheet", href="/src/components/delimiter/delimiter.sass")
-    span.delimiter
+  - const id = Math.random() * 100000;
+  div
+    script(id=id, type="module").
+      import Delimiter from "/src/components/delimiter/delimiter.ts";
+      document.getElementById("#{id}").parentNode.innerHTML += (new Delimiter()).element

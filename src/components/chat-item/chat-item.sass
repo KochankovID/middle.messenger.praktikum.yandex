@@ -1,45 +1,44 @@
-@import "src/style"
+@import 'src/style'
 
 .chat-list__item
-  padding: 4% 0 4% 4%
-  display: flex
-  justify-content: space-between
   align-items: center
   cursor: pointer
+  display: flex
+  justify-content: space-between
+  padding: 4% 0 4% 4%
 
   .item-person-info
     display: flex
     width: 75%
 
     .circle-avatar
+      height: 86px
       margin-right: 26px
       width: 86px
-      height: 86px
 
     .item-title
+      align-items: start
       display: flex
       flex-direction: column
       justify-content: space-between
-      align-items: start
+      padding: 4% 0
       width: 60%
 
-      padding: 4% 0 4% 0
-
       h4
-        margin: 0
-        width: 100%
         display: block
+        margin: 0
         overflow: hidden
-        white-space: nowrap
         text-overflow: ellipsis
+        white-space: nowrap
+        width: 100%
 
       span
         +hint-font
         display: block
-        width: 100%
         overflow: hidden
-        white-space: nowrap
         text-overflow: ellipsis
+        white-space: nowrap
+        width: 100%
 
   .item-message-info
     display: flex

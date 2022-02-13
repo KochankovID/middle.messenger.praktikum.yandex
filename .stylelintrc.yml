@@ -1,0 +1,32 @@
+#plugins:
+#  - stylelint-scss
+#  - stylelint-order
+#  - stylelint-selector-bem-pattern
+#extends:
+#  - stylelint-config-standard-scss
+#  - stylelint-config-idiomatic-order
+#rules:
+#  block-opening-brace-space-before: null
+#  declaration-block-trailing-semicolon: null
+#  block-closing-brace-newline-before: null
+#  selector-class-pattern: null
+#  property-no-vendor-prefix: null
+#  no-duplicate-at-import-rules: null
+#  scss/at-import-no-partial-leading-underscore: null
+#  scss/at-import-partial-extension-blacklist: null
+#  scss/at-import-partial-extension-whitelist: null
+#  scss/partial-no-import: null
+#  scss/at-import-partial-extension: null
+#  selector-pseudo-element-no-unknown: null
+#  selector-no-vendor-prefix: null
+#  plugin/selector-bem-pattern:
+#    implicitComponents: true
+#    componentName: '[-a-z]+'
+#    componentSelectors:
+#      initial: '^(.([-a-z]+)(__[a-z]+|--[-a-z0-9]+|__[-a-z]+--[-a-z0-9]+|.[-a-z]+|__[a-z]+.[-a-z]+)?)$'
+#    ignoreSelectors:
+#      - 'h[1-6]'
+#      - '^\*$'
+#customSyntax: postcss-sass
+#ignoreFiles:
+#  - build/*

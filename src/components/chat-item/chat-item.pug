@@ -1,22 +1,12 @@
-include ../circle-avatar/circle-avatar
-include __time/chat-item__time
-include __notification/chat-item__notification
-
-mixin chat-list__item(url, name, sender, message, time, notification)
-    link(rel="stylesheet", href="/src/components/chat-item/chat-item.sass")
-    .chat-list__item
-        .item-person-info
-            +circle-avatar(url)
-            .item-title
-                h4= name
-                if sender !== ''
-                    span
-                        strong= sender
-                        |  #{message}
-                else
-                    span= message
-        .item-message-info
-            if notification
-                +chat-item__notification(notification)
-
-            +chat-item__time(time)
+mixin chat-item(url, name, sender, message, time, notification)
+  - const id = Math.random() * 100000;
+  script(id=id, type="module").
+      import ChatItem from "/src/components/chat-item/chat-item.ts";
+      document.getElementById("#{id}").parentNode.innerHTML += (new ChatItem({
+      url: "#{url}",
+      name: "#{name}",
+      sender: "#{sender}",
+      message: "#{message}",
+      time: "#{time}",
+      notification: "#{notification}",
+      })).element
