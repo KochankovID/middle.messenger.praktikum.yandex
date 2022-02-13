@@ -1,6 +1,7 @@
 mixin chat-view(url, name, messages)
   - const id = Math.random() * 100000;
-  script(id=id, type="module").
+  div
+    script(id=id, type="module").
       import ChatView from "/src/components/chat-view/chat-view.ts";
       document.getElementById("#{id}").parentNode.innerHTML += (new ChatView({
       url: "#{url}",
