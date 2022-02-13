@@ -2,11 +2,11 @@ import validator from "validator";
 
 export function setValidator(
   inputElement: HTMLInputElement,
-  validator: (string) => boolean,
+  validator: (argument: string) => boolean,
   events: string[] = ["blur", "focus"]
 ) {
   events.forEach((event) => {
-    inputElement.addEventListener(event, (event) => {
+    inputElement.addEventListener(event, () => {
       if (validator(inputElement.value)) {
         inputElement.style.borderWidth = "0px";
         console.log(inputElement.value);
@@ -36,8 +36,7 @@ export function validateName(name: string): boolean {
 
 export function validatePhone(name: string): boolean {
   return (
-    validator.isNumeric(name, { ignore: "+" }) &&
-    validator.isLength(name, { min: 10, max: 15 })
+    validator.isNumeric(name) && validator.isLength(name, { min: 10, max: 15 })
   );
 }
 
