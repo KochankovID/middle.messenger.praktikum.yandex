@@ -5,10 +5,12 @@ include ../../components/chat-preview/chat-preview
 block chat-content
     +chat-preview
     script(defer).
-      for (let chatItem of document.querySelectorAll('.chat-list__item')) {
-        console.log(chatItem)
-        chatItem.addEventListener("click", () => {
-          window.location.href = "/chat-selected/chat-selected.html";
-          return false;
-        })
-      }
+      window.addEventListener('DOMContentLoaded', (event) => {
+        for (let chatItem of document.querySelectorAll('.chat-list__item')) {
+          console.log(chatItem)
+          chatItem.addEventListener("click", () => {
+            window.location.href = "/chat-selected/chat-selected.html";
+            return false;
+          })
+        }
+      })

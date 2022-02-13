@@ -9,7 +9,7 @@ const template = `
       != block`;
 
 type LinkProperties = {
-  block: string;
+  block?: string;
   url: string;
   innerBlock: string;
 };
