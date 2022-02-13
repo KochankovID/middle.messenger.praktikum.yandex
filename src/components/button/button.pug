@@ -1,7 +1,8 @@
 mixin button(text, url)
-    script(type="module").
+  - const id = Math.random() * 100000;
+  script(id=id, type="module").
       import Button from "/src/components/button/button.ts";
-      document.currentScript.parentNode.innerHTML += (new Button({
+      document.getElementById("#{id}").parentNode.innerHTML += (new Button({
       text: "#{text}",
       url: "#{url}"
       })).element

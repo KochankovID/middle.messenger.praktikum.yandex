@@ -1,6 +1,7 @@
 mixin chat-view__message_text(text)
-    script(type="module").
+  - const id = Math.random() * 100000;
+  script(id=id, type="module").
       import ChatViewMessageText from "/src/components/chat-view/__message/--text/chat-view__message--text.ts";
-      document.currentScript.parentNode.innerHTML += (new ChatViewMessageText({
+      document.getElementById("#{id}").parentNode.innerHTML += (new ChatViewMessageText({
       text: "#{text}",
       })).element

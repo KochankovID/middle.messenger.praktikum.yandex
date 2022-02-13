@@ -1,7 +1,8 @@
 mixin chat-item(url, name, sender, message, time, notification)
-    script(type="module").
+  - const id = Math.random() * 100000;
+  script(id=id, type="module").
       import ChatItem from "/src/components/chat-item/chat-item.ts";
-      document.currentScript.parentNode.innerHTML += (new ChatItem({
+      document.getElementById("#{id}").parentNode.innerHTML += (new ChatItem({
       url: "#{url}",
       name: "#{name}",
       sender: "#{sender}",

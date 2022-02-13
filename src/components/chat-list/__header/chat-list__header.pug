@@ -1,4 +1,5 @@
 mixin chat-list__header
-    script(type="module").
+  - const id = Math.random() * 100000;
+  script(id=id, type="module").
       import ChatListHeader from "/src/components/chat-list/__header/chat-list__header.ts";
-      document.currentScript.parentNode.innerHTML += (new ChatListHeader({})).element
+      document.getElementById("#{id}").parentNode.innerHTML += (new ChatListHeader({})).element

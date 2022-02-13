@@ -1,6 +1,7 @@
 mixin chat-item__time(url)
-    script(type="module").
+  - const id = Math.random() * 100000;
+  script(id=id, type="module").
       import ChatItemTime from "/src/components/chat-item/__time/chat-item__time.ts";
-      document.currentScript.parentNode.innerHTML += (new ChatItemTime({
+      document.getElementById("#{id}").parentNode.innerHTML += (new ChatItemTime({
       time: "#{time}",
       })).element

@@ -1,6 +1,7 @@
 mixin chat-list(items)
-    script(type="module").
+  - const id = Math.random() * 100000;
+  script(id=id, type="module").
       import ChatList from "/src/components/chat-list/chat-list.ts";
-      document.currentScript.parentNode.innerHTML += (new ChatList({
+      document.getElementById("#{id}").parentNode.innerHTML += (new ChatList({
       items: JSON.parse('!{JSON.stringify(items)}')
       })).element

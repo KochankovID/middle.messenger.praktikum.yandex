@@ -1,12 +1,13 @@
 mixin link(url)
+  - const id = Math.random() * 100000;
   div.link-mixin
     if block
       .link-block
         block
-    script(type="module").
+    script(id=id, type="module").
       import Link from "/src/components/link/link.ts";
       let linkElement = (new Link({
       url: "#{url}",
       }))
       linkElement.setInnerBlock(document.currentScript.parentNode.firstChild.innerHTML)
-      document.currentScript.parentNode.innerHTML += linkElement.element
+      document.getElementById("#{id}").parentNode.innerHTML += linkElement.element
