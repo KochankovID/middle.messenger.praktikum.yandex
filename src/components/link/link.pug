@@ -9,5 +9,5 @@ mixin link(url)
       let linkElement = (new Link({
       url: "#{url}",
       }))
-      linkElement.setInnerBlock(document.currentScript.parentNode.firstChild.innerHTML)
+      linkElement.setInnerBlock(document.getElementById("#{id}").parentNode.firstChild.innerHTML)
       document.getElementById("#{id}").parentNode.innerHTML += linkElement.element

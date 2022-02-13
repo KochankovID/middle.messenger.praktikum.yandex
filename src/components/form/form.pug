@@ -9,5 +9,5 @@ mixin form(title)
       let formElement = (new Form({
       title: "#{title}",
       }))
-      formElement.setInnerBlock(document.currentScript.parentNode.firstChild.innerHTML)
+      formElement.setInnerBlock(document.getElementById("#{id}").parentNode.firstChild.innerHTML)
       document.getElementById("#{id}").parentNode.innerHTML += formElement.element
