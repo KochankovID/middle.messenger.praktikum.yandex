@@ -29,10 +29,12 @@ type ChatItemProperties = {
   message: string;
   time: string;
   notification: string;
-  [key: string]: any;
+  circleAvatar?: CircleAvatar;
+  chatItemTime?: ChatItemTime;
+  chatItemNotification?: ChatItemNotification;
 };
 
-export default class ChatItem extends Block {
+export default class ChatItem extends Block<ChatItemProperties> {
   constructor(properties: ChatItemProperties) {
     properties.circleAvatar = new CircleAvatar({
       url: properties.url,

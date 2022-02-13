@@ -5,12 +5,10 @@ const template = `
 span.delimiter
 `;
 
-type DelimiterProperties = {
-  [key: string]: any;
-};
+type DelimiterProperties = {};
 
-export default class Delimiter extends Block {
-  constructor(properties?: DelimiterProperties) {
+export default class Delimiter extends Block<DelimiterProperties> {
+  constructor(properties: DelimiterProperties) {
     super(template, properties);
   }
 }

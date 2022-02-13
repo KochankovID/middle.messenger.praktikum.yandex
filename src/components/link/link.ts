@@ -9,14 +9,14 @@ const template = `
       != block`;
 
 type LinkProperties = {
+  block: string;
   url: string;
-  innerBlock?: string;
-  [key: string]: any;
+  innerBlock: string;
 };
 
-export default class Link extends Block {
+export default class Link extends Block<LinkProperties> {
   constructor(properties: LinkProperties) {
-    properties.block = pug.compile(properties?.innerBlock)();
+    properties.block = pug.compile(properties.innerBlock)();
     super(template, properties);
   }
 

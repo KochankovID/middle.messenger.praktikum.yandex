@@ -29,10 +29,11 @@ type ChatViewMessageProperties = {
   content: string;
   time: string;
   sender: number;
-  [key: string]: any;
+  chatViewMessageImage?: ChatViewMessageImage;
+  chatViewMessageText?: ChatViewMessageText;
 };
 
-export default class ChatViewMessage extends Block {
+export default class ChatViewMessage extends Block<ChatViewMessageProperties> {
   constructor(properties: ChatViewMessageProperties) {
     properties.chatViewMessageImage = new ChatViewMessageImage({
       url: properties.content,

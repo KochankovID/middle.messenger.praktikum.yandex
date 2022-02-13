@@ -14,10 +14,10 @@ const template = `
 `;
 
 type ChatListHeaderProperties = {
-  [key: string]: any;
+  link?: Link;
 };
 
-export default class ChatListHeader extends Block {
+export default class ChatListHeader extends Block<ChatListHeaderProperties> {
   constructor(properties?: ChatListHeaderProperties) {
     if (!properties) {
       properties = {};

@@ -7,10 +7,9 @@ img(src=url).circle-avatar
 
 type CircleAvatarProperties = {
   url: string;
-  [key: string]: any;
 };
 
-export default class CircleAvatar extends Block {
+export default class CircleAvatar extends Block<CircleAvatarProperties> {
   constructor(properties: CircleAvatarProperties) {
     super(template, properties);
   }

@@ -7,10 +7,9 @@ img(src=url).chat-view__message--image
 
 type ChatViewMessageImageProperties = {
   url: string;
-  [key: string]: any;
 };
 
-export default class ChatViewMessageImage extends Block {
+export default class ChatViewMessageImage extends Block<ChatViewMessageImageProperties> {
   constructor(properties: ChatViewMessageImageProperties) {
     super(template, properties);
   }

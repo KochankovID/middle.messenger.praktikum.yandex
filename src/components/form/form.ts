@@ -15,13 +15,13 @@ const template = `
 
 type FormProperties = {
   title: string;
-  innerBlock?: string;
-  [key: string]: any;
+  innerBlock: string;
+  block?: string;
 };
 
-export default class Form extends Block {
+export default class Form extends Block<FormProperties> {
   constructor(properties: FormProperties) {
-    properties.block = pug.compile(properties?.innerBlock)();
+    properties.block = pug.compile(properties.innerBlock)();
     super(template, properties);
   }
 

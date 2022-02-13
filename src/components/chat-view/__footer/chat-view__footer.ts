@@ -9,12 +9,10 @@ const template = `
             i.icon-send
 `;
 
-type ChatViewFooterProperties = {
-  [key: string]: any;
-};
+type ChatViewFooterProperties = {};
 
-export default class ChatViewFooter extends Block {
-  constructor(properties?: ChatViewFooterProperties) {
+export default class ChatViewFooter extends Block<ChatViewFooterProperties> {
+  constructor(properties: ChatViewFooterProperties) {
     super(template, properties);
   }
 }

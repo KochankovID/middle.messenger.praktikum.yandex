@@ -8,10 +8,9 @@ const template = `
 
 type ChatItemNotificationProperties = {
   notification: string;
-  [key: string]: any;
 };
 
-export default class ChatItemNotification extends Block {
+export default class ChatItemNotification extends Block<ChatItemNotificationProperties> {
   constructor(properties: ChatItemNotificationProperties) {
     super(template, properties);
   }

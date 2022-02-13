@@ -20,6 +20,8 @@
   "devDependencies": {
     "@parcel/transformer-pug": "^2.0.1",
     "@types/express": "^4.17.13",
+    "@types/pug": "^2.0.6",
+    "@types/validator": "^13.7.1",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "eslint": "^8.8.0",

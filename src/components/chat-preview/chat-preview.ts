@@ -8,12 +8,10 @@ const template = `
   i.icon-star
 `;
 
-type ChatPreviewProperties = {
-  [key: string]: any;
-};
+type ChatPreviewProperties = {};
 
-export default class ChatPreview extends Block {
-  constructor(properties?: ChatPreviewProperties) {
+export default class ChatPreview extends Block<ChatPreviewProperties> {
+  constructor(properties: ChatPreviewProperties) {
     super(template, properties);
   }
 }

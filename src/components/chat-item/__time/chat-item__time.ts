@@ -8,10 +8,9 @@ const template = `
 
 type ChatItemTimeProperties = {
   time: string;
-  [key: string]: any;
 };
 
-export default class ChatItemTime extends Block {
+export default class ChatItemTime extends Block<ChatItemTimeProperties> {
   constructor(properties: ChatItemTimeProperties) {
     super(template, properties);
   }

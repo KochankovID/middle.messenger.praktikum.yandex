@@ -13,10 +13,10 @@ const template = `
 type ChatViewHeaderProperties = {
   url: string;
   name: string;
-  [key: string]: any;
+  circleAvatar?: CircleAvatar;
 };
 
-export default class ChatViewHeader extends Block {
+export default class ChatViewHeader extends Block<ChatViewHeaderProperties> {
   constructor(properties: ChatViewHeaderProperties) {
     properties.circleAvatar = new CircleAvatar({
       url: properties.url,

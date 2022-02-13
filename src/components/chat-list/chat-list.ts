@@ -24,10 +24,12 @@ type ChatListItem = {
 
 type ChatListProperties = {
   items: ChatListItem[];
-  [key: string]: any;
+  chatListHeader?: ChatListHeader;
+  delimiter?: Delimiter;
+  chatListItems?: ChatItem[];
 };
 
-export default class ChatList extends Block {
+export default class ChatList extends Block<ChatListProperties> {
   constructor(properties: ChatListProperties) {
     properties.chatListHeader = new ChatListHeader();
     properties.delimiter = new Delimiter();

@@ -7,10 +7,9 @@ span.chat-view__message--text= text
 
 type ChatViewMessageTextProperties = {
   text: string;
-  [key: string]: any;
 };
 
-export default class ChatViewMessageText extends Block {
+export default class ChatViewMessageText extends Block<ChatViewMessageTextProperties> {
   constructor(properties: ChatViewMessageTextProperties) {
     super(template, properties);
   }

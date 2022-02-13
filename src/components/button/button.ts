@@ -8,10 +8,9 @@ a.button(href=url)= text
 type ButtonProperties = {
   text: string;
   url: string;
-  [key: string]: any;
 };
 
-export default class Button extends Block {
+export default class Button extends Block<ButtonProperties> {
   constructor(properties: ButtonProperties) {
     super(template, properties);
   }

@@ -1,7 +1,7 @@
 import { EventBus } from "./event-bus";
-import pug from "pug";
+import pug, { compileTemplate } from "pug";
 
-export default abstract class Block {
+export default abstract class Block<Properties extends {}> {
   static EVENTS = {
     INIT: "init",
     FLOW_CDM: "flow:component-did-mount",
@@ -11,15 +11,12 @@ export default abstract class Block {
 
   protected template: string;
 
-  protected _element: HTMLElement | undefined;
-  protected props: Record<string, any>;
+  protected _element: string | undefined;
+  protected props: Properties;
   protected eventBus: EventBus;
-  private compiledTemplate: (locals: { [key: string]: any }) => HTMLElement;
+  private compiledTemplate: compileTemplate;
 
-  protected constructor(
-    template: string,
-    properties: Record<string, any> = {}
-  ) {
+  protected constructor(template: string, properties: Properties) {
     this.props = this.makePropsProxy(properties);
     this.eventBus = new EventBus();
     this.template = template;
@@ -39,7 +36,7 @@ export default abstract class Block {
     this.eventBus.emit(Block.EVENTS.FLOW_RENDER);
   }
 
-  get element(): HTMLElement {
+  get element(): string {
     return this._element!;
   }
 
@@ -47,22 +44,20 @@ export default abstract class Block {
     this._element = this.render();
   }
 
-  render(): HTMLElement {
+  render(): string {
     return this.compiledTemplate(this.props);
   }
 
-  private makePropsProxy(properties: Record<string, any>): Record<string, any> {
-    return new Proxy(properties, {
-      get(target: Record<string, any>, properties: string): any {
-        const value = target[properties];
+  private makePropsProxy(properties: Properties): Properties {
+    return new Proxy(properties ?? {}, {
+      get(target: Properties, property: string): any {
+        // @ts-ignore
+        const value = target[property];
         return typeof value === "function" ? value.bind(target) : value;
       },
-      set: (
-        target: Record<string, any>,
-        properties: string,
-        value: any
-      ): boolean => {
-        target[properties] = value;
+      set: (target: Properties, property: string, value: any): boolean => {
+        // @ts-ignore
+        target[property] = value;
 
         this.eventBus.emit(Block.EVENTS.FLOW_RENDER, { ...target }, target);
         return true;
