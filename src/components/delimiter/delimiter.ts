@@ -1,14 +1,18 @@
-import Block from "../../utils/block";
-import "./delimiter.sass";
+import jss from "jss";
+import { styles } from "./styles";
+import {
+  InlineTagBlock,
+  InlineTagProperties,
+} from "../../utils/block/inline-tag-block";
 
-const template = `
-span.delimiter
-`;
+export function delimiter(properties?: InlineTagProperties): InlineTagBlock {
+  const block = new InlineTagBlock({
+    tagName: "div",
+    ...properties,
+  });
 
-type DelimiterProperties = {};
+  const { classes } = jss.createStyleSheet(styles).attach();
+  block.props.attributes.class.push(classes.delimiter);
 
-export default class Delimiter extends Block<DelimiterProperties> {
-  constructor(properties: DelimiterProperties) {
-    super(template, properties);
-  }
+  return block;
 }

@@ -1,7 +1,0 @@
-mixin circle-avatar(url)
-  - const id = Math.random() * 100000;
-  script(id=id, type="module").
-      import CircleAvatar from "/src/components/circle-avatar/circle-avatar.ts";
-      document.getElementById("#{id}").parentNode.innerHTML += (new CircleAvatar({
-      url: "#{url}",
-      })).element

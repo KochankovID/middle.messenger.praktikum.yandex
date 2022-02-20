@@ -1,17 +1,18 @@
-import Block from "../../utils/block";
-import "./button.sass";
+import jss from "jss";
+import { styles } from "./styles";
+import {
+  ContainerProperties,
+  ContainerTagBlock,
+} from "../../utils/block/container-tag-block";
 
-const template = `
-a.button(href=url)= text
-`;
+export class Button extends ContainerTagBlock {
+  constructor(properties: ContainerProperties) {
+    super({
+      tagName: "button",
+      ...properties,
+    });
 
-type ButtonProperties = {
-  text: string;
-  url: string;
-};
-
-export default class Button extends Block<ButtonProperties> {
-  constructor(properties: ButtonProperties) {
-    super(template, properties);
+    const { classes } = jss.createStyleSheet(styles).attach();
+    this.props.attributes.class.push(classes.button);
   }
 }

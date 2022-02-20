@@ -1,23 +1,5 @@
 import validator from "validator";
 
-export function setValidator(
-  inputElement: HTMLInputElement,
-  validator: (argument: string) => boolean,
-  events: string[] = ["blur", "focus"]
-) {
-  events.forEach((event) => {
-    inputElement.addEventListener(event, () => {
-      if (validator(inputElement.value)) {
-        inputElement.style.borderWidth = "0px";
-        console.log(inputElement.value);
-      } else {
-        inputElement.style.setProperty("border-width", "2px", "important");
-        inputElement.style.borderColor = "red";
-      }
-    });
-  });
-}
-
 export function validateLogin(login: string): boolean {
   return (
     validator.isAlphanumeric(login, undefined, { ignore: "[-_]" }) &&

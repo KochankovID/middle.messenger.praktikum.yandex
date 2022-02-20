@@ -1,17 +1,25 @@
-import Block from "../../utils/block";
+import {
+  InlineProperties,
+  InlineTagBlock,
+} from "../../utils/block/inline-tag-block";
 
-const template = `
-input(id= id, type= type, name= name)
-`;
+export class Input extends InlineTagBlock {
+  private value: string = "";
 
-type InputProperties = {
-  id: string;
-  type: string;
-  name: string;
-};
+  constructor(properties: InlineProperties) {
+    super({
+      tagName: "input",
+      ...properties,
+    });
+    this.props.callbacks.input = (event: Event) => {
+      this.value = (event.target as HTMLInputElement).value;
+      return true;
+    };
+  }
 
-export default class Input extends Block<InputProperties> {
-  constructor(properties: InputProperties) {
-    super(template, properties);
+  render(): HTMLElement {
+    const element = super.render() as HTMLInputElement;
+    element.value = this.value;
+    return element;
   }
 }

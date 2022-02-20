@@ -1,31 +1,39 @@
-import Block from "../../utils/block";
-import pug from "pug";
-import "./form.sass";
+import jss from "jss";
+import { styles } from "./styles";
+import { H1 } from "../headers/headers";
+import {
+  ContainerProperties,
+  ContainerTagBlock,
+} from "../../utils/block/container-tag-block";
+import { container } from "../container/container";
 
-const template = `
-.form
-  if title
-      div.form__title
-          h1= title
-  form
-      .form-content
-        if block
-          != block
-`;
-
-type FormProperties = {
+type FormProperties = ContainerProperties & {
   title: string;
-  innerBlock: string;
-  block?: string;
 };
 
-export default class Form extends Block<FormProperties> {
-  constructor(properties: FormProperties) {
-    properties.block = pug.compile(properties.innerBlock)();
-    super(template, properties);
-  }
+export function form(properties: FormProperties) {
+  const { classes } = jss.createStyleSheet(styles).attach();
 
-  setInnerBlock(block: string) {
-    this.props.block = block;
-  }
+  const block = new ContainerTagBlock({
+    attributes: {
+      ...properties.attributes,
+    },
+    children: [
+      container(classes.formTitleContainer, [
+        new H1({
+          attributes: {
+            class: [classes.formTitle],
+          },
+          children: [properties.title],
+        }),
+      ]),
+      new ContainerTagBlock({
+        tagName: "form",
+        children: [container(classes.formContent, properties.children ?? [])],
+      }),
+    ],
+  });
+
+  block.props.attributes.class.push(classes.form);
+  return block;
 }

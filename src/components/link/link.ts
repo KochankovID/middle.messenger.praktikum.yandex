@@ -1,26 +1,18 @@
-import Block from "../../utils/block";
-import pug from "pug";
-import "./link.sass";
+import jss from "jss";
+import { styles } from "./styles";
+import {
+  ContainerProperties,
+  ContainerTagBlock,
+} from "../../utils/block/container-tag-block";
 
-const template = `
-.link-container
-    a.link(href=url)
-    if block
-      != block`;
+export class Link extends ContainerTagBlock {
+  constructor(properties: ContainerProperties) {
+    super({
+      tagName: "a",
+      ...properties,
+    });
 
-type LinkProperties = {
-  block?: string;
-  url: string;
-  innerBlock: string;
-};
-
-export default class Link extends Block<LinkProperties> {
-  constructor(properties: LinkProperties) {
-    properties.block = pug.compile(properties.innerBlock)();
-    super(template, properties);
-  }
-
-  setInnerBlock(block: string) {
-    this.props.block = block;
+    const { classes } = jss.createStyleSheet(styles).attach();
+    this.props.attributes.class.push(classes.link);
   }
 }

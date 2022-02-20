@@ -1,16 +1,28 @@
-import Block from "../../utils/block";
-import "./circle-avatar.sass";
+import { ComplexBlock } from "../../utils/block/complex-block";
+import {
+  InlineProperties,
+  InlineTagBlock,
+} from "../../utils/block/inline-tag-block";
+import jss, { Classes } from "jss";
+import { styles } from "./styles";
+import { IBlock } from "../../utils/block/iblock";
 
-const template = `
-img(src=url).circle-avatar
-`;
-
-type CircleAvatarProperties = {
+type CircleAvatarProperties = InlineProperties & {
   url: string;
 };
 
-export default class CircleAvatar extends Block<CircleAvatarProperties> {
-  constructor(properties: CircleAvatarProperties) {
-    super(template, properties);
+export class CircleAvatar extends ComplexBlock<CircleAvatarProperties> {
+  setUpStyles(): Classes {
+    return jss.createStyleSheet(styles).attach().classes;
+  }
+
+  build(): IBlock<InlineProperties> {
+    return new InlineTagBlock({
+      tagName: "img",
+      attributes: {
+        src: this.props.url,
+        class: [this.classes.circleAvatar],
+      },
+    });
   }
 }
