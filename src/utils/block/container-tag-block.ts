@@ -26,8 +26,8 @@ export class ContainerTagBlock extends TagBlock<InnerContainerTagProperties> {
     return {
       tagName: props.tagName ?? "div",
       attributes: {
-        class: props.attributes?.class ?? [],
         ...props.attributes,
+        class: props.attributes?.class ?? [],
       },
       callbacks: props.callbacks ?? {},
       children: props.children ?? [],

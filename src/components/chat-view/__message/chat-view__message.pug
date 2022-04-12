@@ -1,9 +1,0 @@
-mixin chat-view__message(content, time, sender)
-  - const id = Math.random() * 100000;
-  script(id=id, type="module").
-      import ChatViewMessage from "/src/components/chat-view/__message/chat-view__message.ts";
-      document.getElementById("#{id}").parentNode.innerHTML += (new ChatViewMessage({
-      content: "#{content}",
-      time: "#{time}",
-      sender: "#{sender}",
-      })).element

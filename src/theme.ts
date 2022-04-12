@@ -89,8 +89,8 @@ export const themeStyles = {
   iconMore: {
     background: "url('/static/icons/more.svg') no-repeat center",
     display: "inline",
-    height: "24px",
-    width: "24px",
+    height: "48px",
+    width: "48px",
   },
   iconAttachFile: {
     background: "url('/static/icons/attach_file.svg') no-repeat center",

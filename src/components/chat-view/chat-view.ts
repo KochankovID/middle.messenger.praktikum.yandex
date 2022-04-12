@@ -1,50 +1,34 @@
-import Block from "../../utils/block";
-import ChatViewHeader from "./__header/chat-view__header";
-import Delimiter from "../delimiter/delimiter";
-import ChatViewMessage from "./__message/chat-view__message";
-import ChatViewFooter from "./__footer/chat-view__footer";
+import { InlineProperties } from "../../utils/block/inline-tag-block";
+import { ComplexBlock } from "../../utils/block/complex-block";
+import jss, { Classes } from "jss";
+import { styles } from "./styles";
+import { IBlock } from "../../utils/block/iblock";
+import { container } from "../container/container";
+import { chatViewHeader } from "./chat-view-header/chat-view-header";
+import { delimiter } from "../delimiter/delimiter";
+import { ChatViewMessage } from "./chat-view-message/chat-view-message";
+import { chatViewFooter } from "./chat-view-footer/chat-view-footer";
 
-import "./chat-view.sass";
-
-const template = `
-.chat-view
-    != chatViewHeader.element
-    != delimiter.element
-    .scroll-container
-        .messages-column
-            each message in messagesElements
-                != message.element
-
-    != delimiter.element
-    != chatViewFooter.element
-`;
-
-type Message = {
-  content: string;
-  time: string;
-  sender: number;
-};
-
-type ChatViewProperties = {
+type ChatItemProperties = InlineProperties & {
   url: string;
   name: string;
-  messages: Message[];
-  [key: string]: any;
+  messages: ChatViewMessage[];
 };
 
-export default class ChatView extends Block {
-  constructor(properties: ChatViewProperties) {
-    properties.chatViewHeader = new ChatViewHeader({
-      url: properties.url,
-      name: properties.name,
-    });
-    properties.messagesElements = [];
-    for (let message of properties.messages) {
-      properties.messagesElements.push(new ChatViewMessage(message));
-    }
-    properties.delimiter = new Delimiter();
-    properties.chatViewFooter = new ChatViewFooter();
+export class ChatView extends ComplexBlock<ChatItemProperties> {
+  setUpStyles(): Classes {
+    return jss.createStyleSheet(styles).attach().classes;
+  }
 
-    super(template, properties);
+  build(): IBlock {
+    return container(this.classes.chatView, [
+      chatViewHeader(this.props.url, this.props.name),
+      delimiter(),
+      container(this.classes.scrollContainer, [
+        container(this.classes.messagesColumn, this.props.messages),
+      ]),
+      delimiter(),
+      chatViewFooter(),
+    ]);
   }
 }

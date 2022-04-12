@@ -6,17 +6,26 @@ import { InlineProperties } from "./inline-tag-block";
 export abstract class ComplexBlock<
   T extends InlineProperties
 > extends Block<T> {
+  rebuild: boolean = false;
   classes: Classes;
-  block: IBlock<T>;
+  block!: IBlock<T>;
   static styles: Styles;
 
   constructor(props: T) {
     super(props);
     this.classes = this.setUpStyles();
-    const block = this.build();
+    this._build();
+  }
 
+  abstract setUpStyles(): Classes;
+
+  abstract build(): IBlock<InlineProperties>;
+
+  private _build() {
+    const block = this.build();
     block.props = {
       ...block.props,
+      ...this.props,
       attributes: {
         ...block.props.attributes,
         ...this.props.attributes,
@@ -25,16 +34,19 @@ export abstract class ComplexBlock<
           ...(this.props.attributes?.class ?? []),
         ],
       },
+      callbacks: {
+        ...block.props.callbacks,
+        ...this.props.callbacks,
+      },
     };
-
     this.block = block as IBlock<T>;
   }
 
-  abstract setUpStyles(): Classes;
-
-  abstract build(): IBlock<InlineProperties>;
-
   render(): HTMLElement {
+    if (this.rebuild) {
+      this._build();
+      this.rebuild = false;
+    }
     return this.block.render();
   }
 }

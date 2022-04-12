@@ -1,7 +1,0 @@
-mixin chat-view__message_image(url)
-  - const id = Math.random() * 100000;
-script(id=id, type="module").
-      import ChatViewMessageImage from "/src/components/chat-view/__message/--image/chat-view__message--image";
-      document.getElementById("#{id}").parentNode.innerHTML += (new ChatViewMessageImage({
-      url: "#{url}",
-      })).element

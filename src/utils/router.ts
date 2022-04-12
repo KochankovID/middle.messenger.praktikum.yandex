@@ -1,10 +1,10 @@
-import { Block } from "./block";
+import { IBlock } from "./block/iblock";
 
 export class Route {
   private readonly pathname: string;
-  public block: Block;
+  public block: IBlock;
 
-  constructor(pathname: string, block: Block) {
+  constructor(pathname: string, block: IBlock) {
     this.pathname = pathname;
     this.block = block;
   }
@@ -37,7 +37,7 @@ export class Router {
     Router.instance = this;
   }
 
-  use(pathname: string, block: Block) {
+  use(pathname: string, block: IBlock) {
     const route = new Route(pathname, block);
     this.routes.push(route);
     return this;

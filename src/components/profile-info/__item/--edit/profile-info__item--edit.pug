@@ -1,9 +1,0 @@
-include ../../../delimiter/delimiter
-
-mixin profile-info__item_edit(label, name, placeholder)
-    link(rel="stylesheet", href="/src/components/profile-info/__item/--edit/profile-info__item--edit.sass")
-    .profile-info__item--edit
-        .profile-info-title
-            span.profile-info-label= label
-            input(type='text', name=name, placeholder=placeholder)
-        +delimiter

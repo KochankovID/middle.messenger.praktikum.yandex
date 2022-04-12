@@ -1,5 +1,0 @@
-mixin chat-preview
-  - const id = Math.random() * 100000;
-  script(id=id  , type="module").
-      import ChatPreview from "/src/components/chat-preview/chat-preview.ts";
-      document.getElementById("#{id}").parentNode.innerHTML += (new ChatPreview()).element

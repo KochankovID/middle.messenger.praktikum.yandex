@@ -1,17 +1,33 @@
-import Block from "../../utils/block";
-import "./chat-preview.sass";
+import { container } from "../container/container";
+import jss from "jss";
+import { styles } from "./styles";
+import { themeClasses } from "../../app";
+import { InlineTagBlock } from "../../utils/block/inline-tag-block";
+import { ContainerTagBlock } from "../../utils/block/container-tag-block";
+import { IBlock } from "../../utils/block/iblock";
 
-const template = `
-.chat-preview
-  i.icon-planet
-  p Выберете чат
-  i.icon-star
-`;
+export function chatPreview(): IBlock {
+  const { classes } = jss.createStyleSheet(styles).attach();
 
-type ChatPreviewProperties = {};
-
-export default class ChatPreview extends Block<ChatPreviewProperties> {
-  constructor(properties: ChatPreviewProperties) {
-    super(template, properties);
-  }
+  return container(classes.chatPreview, [
+    new InlineTagBlock({
+      tagName: "i",
+      attributes: {
+        class: [themeClasses.iconPlanet],
+      },
+    }),
+    new ContainerTagBlock({
+      tagName: "p",
+      attributes: {
+        class: [classes.chatPreviewText],
+      },
+      children: ["Выберете чат"],
+    }),
+    new InlineTagBlock({
+      tagName: "i",
+      attributes: {
+        class: [themeClasses.iconStar],
+      },
+    }),
+  ]);
 }

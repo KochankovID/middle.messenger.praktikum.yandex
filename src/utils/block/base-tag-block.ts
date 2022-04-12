@@ -26,8 +26,12 @@ export abstract class TagBlock<T extends InnerTagProperties> extends Block<T> {
     if (this.props.attributes !== undefined) {
       for (let [attribute, value] of Object.entries(this.props.attributes)) {
         if (attribute === "class") {
-          for (let elementClass of value) {
-            node.classList.add(elementClass);
+          try {
+            for (let elementClass of value) {
+              node.classList.add(elementClass);
+            }
+          } catch {
+            console.log(this.props.attributes.class);
           }
         } else {
           node.setAttribute(attribute, value);

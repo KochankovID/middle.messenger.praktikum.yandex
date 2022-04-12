@@ -1,7 +1,0 @@
-mixin chat-view__header(url, name)
-    script(type="module").
-      import ChatViewHeader from "/src/components/chat-view/__header/chat-view__header.ts";
-      document.currentScript.parentNode.innerHTML += (new ChatViewHeader({
-      url: "#{url}",
-      name: "#{name}",
-      })).element
